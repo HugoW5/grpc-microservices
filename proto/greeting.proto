@@ -2,18 +2,17 @@ syntax = "proto3";
 
 package greeting;
 
-option go_package = "greetingpb";
+option go_package = "github.com/HugoW5/grpc-microservices/greetingpb";
 
-import "user.proto";
 
-service GreetingService{
-    rpc SayHello(SayHelloRequest) returns(SayHelloResponse);
+service GreetingService {
+  rpc SayHello(SayHelloRequest) returns (SayHelloResponse);
 }
 
-message SayHelloRequest{
-    string user_id = 1;
+message SayHelloRequest {
+  string user_id = 1;
 }
 
-message SayHelloResponse{
-    string message = 1;
+message SayHelloResponse {
+  string message = 1;
 }
