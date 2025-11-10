@@ -1,1 +1,19 @@
 syntax = "proto3";
+
+package greeting;
+
+option go_package = "greetingpb";
+
+import "user.proto";
+
+service GreetingService{
+    rpc SayHello(SayHelloRequest) returns(SayHelloResponse);
+}
+
+message SayHelloRequest{
+    string user_id = 1;
+}
+
+message SayHelloResponse{
+    string message = 1;
+}
